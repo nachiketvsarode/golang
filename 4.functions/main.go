@@ -7,8 +7,13 @@ func simpleFunction() {
 
 }
 
-func add(a, b int) int {
+func add(a, b int) int { // common int for multiple varibles
 	return a + b
+}
+
+func multiply(a, b int) (result int) {
+	result = a * b
+	return
 }
 
 func main() {
@@ -17,5 +22,8 @@ func main() {
 
 	ans := add(3, 4)
 	fmt.Println("add of two number is:", ans)
+
+	data := multiply(3, 4)
+	fmt.Println("multiplication of two number is :", data)
 
 }
