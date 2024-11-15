@@ -11,6 +11,7 @@ type Person struct {
 type Contact struct {
 	Email string
 	Phone string
+	Fax   string
 }
 
 type Address struct {
@@ -61,12 +62,15 @@ func main() {
 
 	employee1.Person_Contact.Email = "abcd@gmail.com"
 	employee1.Person_Contact.Phone = "12345678"
-
 	employee1.Person_Address = Address{
 		House: 12,
 		Area:  "Ranchi",
 		State: "Jharkhand",
 	}
+
+	employee1.Person_Contact.Fax = "Fax@4567890"
+
+	//fetching data
 
 	fmt.Println("Employee 1 : ", employee1.Person_Contact.Email)
 	fmt.Println("Employee 1 : ", employee1.Person_Address.State)
