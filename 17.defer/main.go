@@ -9,7 +9,7 @@ import "fmt"
 func main() {
 
 	fmt.Println("First line of statement")
-	fmt.Println("Second line of statement")
+	defer fmt.Println("Second line of statement")
 	fmt.Println("Third line of statement")
 
 }
