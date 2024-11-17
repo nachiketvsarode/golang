@@ -20,7 +20,17 @@ func main() {
 	fmt.Println("Current time: ", currentTime)
 	fmt.Printf("Type of CurrentTime %T\n", currentTime)
 
-	formatted := currentTime.Format("dd-mm-yyyy")
+	formatted := currentTime.Format("02-01-2006, 15:04:05")
 	fmt.Println("Formatted time: ", formatted)
 
 }
+
+/*
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, World!")
+}
+*/
