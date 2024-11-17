@@ -21,7 +21,8 @@ func main() {
 	// the Close() function is responsible for releasing  those resources.
 
 	content := "hello world by prince"
-	_, errors := io.WriteString(file, content)
+	byte, errors := io.WriteString(file, content+"\n")
+	fmt.Fprintln(os.Stdout, []any{"byte written:", byte}...)
 	if errors != nil {
 		fmt.Println("Error while writing file:", errors)
 		return
