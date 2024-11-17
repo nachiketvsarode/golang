@@ -6,10 +6,17 @@ package main
 
 import "fmt"
 
+func add(a, b int) int {
+	return a + b
+
+}
+
 func main() {
 
 	fmt.Println("First line of statement")
 	defer fmt.Println("Second line of statement")
+	data := add(5, 5)
+	defer fmt.Println("Data is :", data)
 	fmt.Println("Third line of statement")
 
 }
