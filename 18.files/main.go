@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+	"io"
+	"os"
+)
+
 func main() {
 	/*
 		file, err := os.Create("example.txt")
@@ -28,5 +34,32 @@ func main() {
 		fmt.Println("successfully created file")
 
 	*/
+
+	file, err := os.Open("example.txt")
+	if err != nil {
+		fmt.Println("Error while creating file: ", err)
+		return
+	}
+	defer file.Close()
+
+	//create a buffer to read file content
+
+	buffer := make([]byte, 1024)
+
+	// Read the file content inot the buffer
+
+	for {
+		n, err := file.Read(buffer)
+		if err == io.EOF {
+			break
+		}
+
+		if err != nil {
+			fmt.Println("Error while reading file", err)
+			return
+		}
+
+		fmt.Println(string(buffer[:n]))
+	}
 
 }
