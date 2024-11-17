@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"os"
 )
 
@@ -35,31 +34,42 @@ func main() {
 
 	*/
 
-	file, err := os.Open("example.txt")
-	if err != nil {
-		fmt.Println("Error while creating file: ", err)
-		return
-	}
-	defer file.Close()
+	// Second example
 
-	//create a buffer to read file content
-
-	buffer := make([]byte, 1024)
-
-	// Read the file content inot the buffer
-
-	for {
-		n, err := file.Read(buffer)
-		if err == io.EOF {
-			break
-		}
-
+	/*
+		file, err := os.Open("example.txt")
 		if err != nil {
-			fmt.Println("Error while reading file", err)
+			fmt.Println("Error while creating file: ", err)
 			return
 		}
+		defer file.Close()
 
-		fmt.Println(string(buffer[:n]))
+		//create a buffer to read file content
+
+		buffer := make([]byte, 1024)
+
+		// Read the file content inot the buffer
+
+		for {
+			n, err := file.Read(buffer)
+			if err == io.EOF {
+				break
+			}
+
+			if err != nil {
+				fmt.Println("Error while reading file", err)
+				return
+			}
+
+			fmt.Println(string(buffer[:n]))
+		}
+	*/
+
+	// Read entire file ....note that this is not a good method if the file size is too large as it will store it in memory
+	content, err := os.ReadFile("example.txt")
+	if err != nil {
+		fmt.Println("Error while reading file", err)
+		return
 	}
-
+	fmt.Println(string(content))
 }
