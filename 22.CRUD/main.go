@@ -10,7 +10,7 @@ import (
 type Todo struct {
 	UserID    int    `json:"userId"`
 	Id        int    `json:"id"`
-	Title     string `json:"titile"`
+	Title     string `json:"title"`
 	Completed bool   `json:"completed"`
 }
 
@@ -45,5 +45,8 @@ func main() {
 	}
 
 	fmt.Println("Todo:", todo)
+
+	fmt.Println("Title response:", todo.Title)
+	fmt.Println("completed response:", todo.Completed)
 
 }
