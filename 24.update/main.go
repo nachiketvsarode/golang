@@ -141,9 +141,8 @@ func performUpdateRequest() {
 }
 func main() {
 	fmt.Println("Leanirng CRUD")
-	//	performGetRequest()
-	//performPostRequest()
-
+	performGetRequest()
+	performPostRequest()
 	performUpdateRequest()
 
 }
