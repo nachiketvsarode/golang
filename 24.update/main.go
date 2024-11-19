@@ -4,6 +4,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -134,7 +135,7 @@ func performUpdateRequest() {
 
 	defer res.Body.Close()
 
-	data, _ := ioutil.ReadAll(res.Body)
+	data, _ := io.ReadAll(res.Body)
 	fmt.Println("Response:", string(data))
 
 }
